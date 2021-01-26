@@ -1,0 +1,28 @@
+function checkDriverAge(age) {
+  //   var age = prompt("Enter your age:");
+
+  if (Number(age) < 18) {
+    console.log("Sorry, you are too young to drive this car. Powering off");
+  } else if (Number(age) > 18) {
+    console.log("Powering on. Enjoy the ride");
+  } else {
+    console.log(
+      "Congratulations on your first year of driving. Enjoy the ride"
+    );
+  }
+}
+
+var checkDriverAge2 = function () {
+  console.log("Entering checkDriverAge2");
+  var age = prompt("Enter your age:");
+
+  if (Number(age) < 18) {
+    alert("Sorry, you are too young to drive this car. Powering off");
+  } else if (Number(age) > 18) {
+    alert("Powering on. Enjoy the ride");
+  } else {
+    alert("Congratulations on your first year of driving. Enjoy the ride");
+  }
+};
+
+checkDriverAge(17);
