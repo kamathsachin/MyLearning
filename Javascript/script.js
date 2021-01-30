@@ -1,3 +1,4 @@
+// Learning Functions
 function checkDriverAge(age) {
   //   var age = prompt("Enter your age:");
 
@@ -25,4 +26,40 @@ var checkDriverAge2 = function () {
   }
 };
 
-checkDriverAge(17);
+// checkDriverAge(17);
+
+// Learning Objects & Arrays
+var database = [
+  {
+    username: "Sachin",
+    password: "Kamath",
+  },
+];
+
+var newsfeed = [
+  {
+    username: "Bobby",
+    timeline: "Feeling Bored",
+  },
+  {
+    username: "Shubha",
+    timeline: "Enjoying the day",
+  },
+  {
+    username: "Sachin",
+    timeline: "Stressed out today",
+  },
+];
+
+var userNamePrompt = prompt("Please enter your username:");
+var passWordPrompt = prompt("Please enter your password:");
+
+function signIn(user, pass) {
+  if (user === database[0].username && pass === database[0].password) {
+    console.log(newsfeed);
+  } else {
+    alert("SignIn unsuccessful");
+  }
+}
+
+signIn(userNamePrompt, passWordPrompt);
