@@ -1,52 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import CommentDetail from "./CommentDetail";
+import ApprovalCard from "./ApprovalCard";
 import faker from "faker";
 
 const App = () => {
   return (
     <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.animals()}></img>
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00PM</span>
-          </div>
-          <div className="text">Nice blog post!</div>
-        </div>
-      </div>
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.animals()}></img>
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00PM</span>
-          </div>
-          <div className="text">Nice blog post!</div>
-        </div>
-      </div>
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.animals()}></img>
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00PM</span>
-          </div>
-          <div className="text">Nice blog post!</div>
-        </div>
-      </div>
+      <ApprovalCard />
+      <CommentDetail
+        author="Sam"
+        timeAgo="Today at 6:00 PM"
+        comment="Nice Blog Post"
+        imageSrc={faker.image.animals()}
+      />
+      <CommentDetail
+        author="Alex"
+        timeAgo="Today at 4:43 PM"
+        comment="Super Blog Post"
+        imageSrc={faker.image.animals()}
+      />
+      <CommentDetail
+        author="Jane"
+        timeAgo="Today at 5:15 PM"
+        comment="Awesome Blog Post"
+        imageSrc={faker.image.animals()}
+      />
     </div>
   );
 };
