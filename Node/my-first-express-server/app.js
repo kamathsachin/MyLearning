@@ -1,18 +1,15 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
-app.use('/add-product', (req, res, next) => {
-    console.log('In the Add Product Middleware!!');
-    res.send('<form action="/product" method="POST"><input type="text" name="product"><button>Add Product</button></form>');
-});
 
-app.use('/product', (req, res, next) => {
-    console.log('Entered Add Products');
-})
+const adminRouter = require('./routes/admin');
+const shopRouter = require('./routes/shop');
 
-app.use('/', (req, res, next) => {
-    console.log('In the Root Middleware!!');
-    res.send('<h1>Welcome from Express.js!!</h1>');
-});
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+app.use(adminRouter);
+app.use(shopRouter);
 
 app.listen(3000);
