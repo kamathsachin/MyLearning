@@ -51,6 +51,14 @@ class LinkedList {
     return console.log(this.printList());
   }
 
+  remove(index) {
+    const leader = this.traverseToIndex(index - 1);
+    const unWantedNode = leader.next;
+    leader.next = unWantedNode.next;
+    this.length--;
+    return console.log(this.printList());
+  }
+
   traverseToIndex(index) {
     let counter = 0;
     let currentNode = this.head;
@@ -81,4 +89,5 @@ linkedList.append(20);
 linkedList.append(30);
 linkedList.prepend(1);
 linkedList.insert(2, 5);
+linkedList.remove(3);
 // console.log(linkedList.printList());
