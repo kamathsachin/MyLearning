@@ -33,6 +33,36 @@ class LinkedList {
     return this;
   }
 
+  insert(index, value) {
+    if (index >= this.length) {
+      return this.append(value);
+    }
+
+    const newNode = {
+      value: value,
+      next: null,
+    };
+
+    const leader = this.traverseToIndex(index - 1);
+    const holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+    return console.log(this.printList());
+  }
+
+  traverseToIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
+
+    while (counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+
+    return currentNode;
+  }
+
   printList() {
     const array = [];
     let currentNode = this.head;
@@ -50,4 +80,5 @@ linkedList.append(10);
 linkedList.append(20);
 linkedList.append(30);
 linkedList.prepend(1);
-console.log(linkedList.printList());
+linkedList.insert(2, 5);
+// console.log(linkedList.printList());
